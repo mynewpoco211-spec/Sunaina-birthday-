@@ -4,17 +4,9 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Happy Birthday, Sunaina ❤️</title>
-
-<meta name="theme-color" content="#080812">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-      rel="stylesheet">
+<title>Happy Birthday Sunaina ❤️</title>
 
 <style>
 
@@ -24,14 +16,13 @@
     padding:0;
 }
 
-html,
-body{
+html,body{
     width:100%;
     height:100%;
     overflow:hidden;
-    background:#070711;
-    color:#fff;
-    font-family:"DM Sans",sans-serif;
+    background:#080812;
+    color:white;
+    font-family:Arial,sans-serif;
 }
 
 body{
@@ -40,94 +31,42 @@ body{
 
 /* BACKGROUND */
 
-#stars{
-    position:fixed;
-    inset:0;
-    z-index:0;
-
+body{
     background:
-    radial-gradient(
-        circle at 20% 20%,
-        rgba(255,92,160,.12),
-        transparent 32%
-    ),
-
-    radial-gradient(
-        circle at 80% 75%,
-        rgba(120,100,255,.13),
-        transparent 35%
-    ),
-
-    linear-gradient(
-        145deg,
-        #080812,
-        #101020 55%,
-        #070711
-    );
+    radial-gradient(circle at 20% 20%,#ff4f9620,transparent 35%),
+    radial-gradient(circle at 80% 80%,#8d6cff20,transparent 35%),
+    linear-gradient(145deg,#070711,#121222,#070711);
 }
 
-#stars:before,
-#stars:after{
+body:before{
 
     content:"";
 
-    position:absolute;
+    position:fixed;
+
     inset:0;
 
+    pointer-events:none;
+
+    opacity:.6;
+
     background-image:
+    radial-gradient(circle at 10% 20%,white 1px,transparent 2px),
+    radial-gradient(circle at 30% 70%,white 1px,transparent 2px),
+    radial-gradient(circle at 60% 15%,white 1px,transparent 2px),
+    radial-gradient(circle at 80% 35%,white 1px,transparent 2px),
+    radial-gradient(circle at 90% 80%,white 1px,transparent 2px),
+    radial-gradient(circle at 45% 45%,white 1px,transparent 2px);
 
-    radial-gradient(
-        2px 2px at 10% 20%,
-        #fff8,
-        transparent
-    ),
+    background-size:250px 220px;
 
-    radial-gradient(
-        1px 1px at 30% 70%,
-        #fff9,
-        transparent
-    ),
-
-    radial-gradient(
-        2px 2px at 60% 18%,
-        #fff7,
-        transparent
-    ),
-
-    radial-gradient(
-        1px 1px at 80% 38%,
-        #fff9,
-        transparent
-    ),
-
-    radial-gradient(
-        2px 2px at 92% 80%,
-        #fff8,
-        transparent
-    ),
-
-    radial-gradient(
-        1px 1px at 45% 45%,
-        #fff8,
-        transparent
-    );
-
-    background-size:260px 220px;
-
-    animation:twinkle 6s linear infinite;
+    animation:stars 6s linear infinite;
 }
 
-#stars:after{
-    opacity:.45;
-    transform:scale(1.4);
-    animation-delay:-3s;
-}
-
-@keyframes twinkle{
+@keyframes stars{
 
     50%{
-        opacity:.35;
-        transform:translateY(-5px);
+        opacity:.25;
     }
 
 }
@@ -138,33 +77,40 @@ body{
 .page{
 
     position:absolute;
+
     inset:0;
 
-    z-index:2;
+    display:none;
 
-    display:flex;
     align-items:center;
+
     justify-content:center;
 
-    padding:22px;
+    padding:20px;
 
-    opacity:0;
-    visibility:hidden;
-
-    transform:scale(1.03);
-
-    transition:
-        opacity .65s ease,
-        transform .65s ease,
-        visibility .65s;
+    z-index:2;
 }
 
 .page.active{
 
-    opacity:1;
-    visibility:visible;
+    display:flex;
 
-    transform:scale(1);
+    animation:fade .6s ease;
+
+}
+
+@keyframes fade{
+
+    from{
+        opacity:0;
+        transform:scale(1.04);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
 }
 
 
@@ -172,135 +118,643 @@ body{
 
     width:min(900px,100%);
 
-    max-height:94vh;
+    max-height:95vh;
 
     overflow:auto;
 
     text-align:center;
 
-    padding:26px 18px;
+    padding:25px 15px;
+
+}
+
+.card::-webkit-scrollbar{
+    display:none;
 }
 
 
 /* TEXT */
 
-.kicker{
-
-    letter-spacing:4px;
+.small-title{
 
     text-transform:uppercase;
+
+    letter-spacing:4px;
 
     font-size:11px;
 
     color:#ff9fc5;
 
-    margin-bottom:12px;
-}
+    margin-bottom:15px;
 
-h1,
-h2{
-
-    font-family:"Playfair Display",serif;
 }
 
 h1{
 
-    font-size:clamp(42px,11vw,88px);
+    font-size:clamp(45px,11vw,90px);
 
     line-height:.95;
 
-    margin-bottom:18px;
+    margin-bottom:20px;
 
-    background:
-        linear-gradient(
-            120deg,
-            #fff,
-            #ffc6db 48%,
-            #d7c9ff
-        );
+    background:linear-gradient(
+        120deg,
+        white,
+        #ffc5dc,
+        #cfc4ff
+    );
 
     -webkit-background-clip:text;
 
     color:transparent;
+
 }
 
 h2{
 
-    font-size:clamp(34px,7vw,62px);
+    font-size:clamp(30px,7vw,60px);
 
-    margin-bottom:12px;
+    margin-bottom:15px;
+
 }
 
-.sub{
-
-    max-width:650px;
-
-    margin:0 auto;
-
-    color:#d9d9e5;
+p{
 
     line-height:1.7;
 
+}
+
+.subtitle{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#d9d9e5;
+
     font-size:15px;
+
 }
 
 
 /* BUTTON */
 
-.btn{
-
-    border:1px solid #ffffff35;
-
-    background:#ffffff0d;
-
-    color:#fff;
-
-    padding:13px 21px;
-
-    border-radius:999px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    backdrop-filter:blur(10px);
-
-    transition:.25s;
-
-    margin:8px;
-}
-
-.btn:hover{
-
-    background:#ffffff18;
-
-    transform:translateY(-2px);
-}
-
-.primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff4f96,
-            #9f7cff
-        );
+button{
 
     border:0;
 
-    box-shadow:0 10px 35px #ff4f9630;
+    color:white;
+
+    cursor:pointer;
+
+    font-size:14px;
+
+}
+
+.btn{
+
+    margin-top:20px;
+
+    padding:14px 24px;
+
+    border-radius:50px;
+
+    background:#ffffff12;
+
+    border:1px solid #ffffff30;
+
+}
+
+.btn.primary{
+
+    background:linear-gradient(
+        135deg,
+        #ff4f96,
+        #9b7cff
+    );
+
+    box-shadow:0 10px 35px #ff4f9635;
+
+}
+
+
+/* MEMORY */
+
+.memory{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:30px;
+
+}
+
+.photo{
+
+    width:min(350px,75vw);
+
+    height:min(55vh,500px);
+
+    padding:7px;
+
+    background:white;
+
+    border-radius:8px;
+
+    box-shadow:0 25px 70px #0009;
+
+}
+
+.photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:3px;
+
+}
+
+.memory-text{
+
+    max-width:330px;
+
+    text-align:left;
+
+}
+
+.memory-number{
+
+    color:#ff9fc5;
+
+    letter-spacing:3px;
+
+    font-size:12px;
+
+    margin-bottom:10px;
+
+}
+
+.memory-text p{
+
+    color:#d7d7e5;
+
+}
+
+
+/* GIFT */
+
+.gift-area{
+
+    height:300px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.gift{
+
+    width:170px;
+
+    height:130px;
+
+    position:relative;
+
+    cursor:pointer;
+
+    transition:.6s;
+
+}
+
+.gift-box{
+
+    position:absolute;
+
+    left:10px;
+
+    bottom:0;
+
+    width:150px;
+
+    height:100px;
+
+    background:linear-gradient(
+        90deg,
+        #d92d70,
+        #ff679c,
+        #d92d70
+    );
+
+    border-radius:8px;
+
+}
+
+.gift-lid{
+
+    position:absolute;
+
+    left:0;
+
+    top:15px;
+
+    width:170px;
+
+    height:45px;
+
+    background:linear-gradient(
+        90deg,
+        #c92765,
+        #ff78aa,
+        #c92765
+    );
+
+    border-radius:8px;
+
+    z-index:3;
+
+    transition:.7s;
+
+}
+
+.ribbon-v{
+
+    position:absolute;
+
+    left:70px;
+
+    bottom:0;
+
+    width:30px;
+
+    height:130px;
+
+    background:#ffd96b;
+
+    z-index:4;
+
+}
+
+.ribbon-h{
+
+    position:absolute;
+
+    left:10px;
+
+    top:55px;
+
+    width:150px;
+
+    height:25px;
+
+    background:#ffd96b;
+
+    z-index:4;
+
+}
+
+.gift.open .gift-lid{
+
+    transform:
+    translateY(-100px)
+    rotate(-10deg);
+
+    opacity:0;
+
+}
+
+.gift.open{
+
+    transform:scale(.9);
+
+}
+
+
+/* SURPRISE PHOTO */
+
+.surprise{
+
+    display:none;
+
+    width:240px;
+
+    height:300px;
+
+    object-fit:cover;
+
+    padding:6px;
+
+    background:white;
+
+    border-radius:7px;
+
+    box-shadow:0 20px 60px #0009;
+
+}
+
+.surprise.show{
+
+    display:block;
+
+    animation:pop .7s ease;
+
+}
+
+@keyframes pop{
+
+    from{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* CAKE */
+
+.cake-area{
+
+    height:280px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+}
+
+.cake{
+
+    position:relative;
+
+    width:240px;
+
+    height:150px;
+
+}
+
+.cake-bottom{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:240px;
+
+    height:75px;
+
+    border-radius:12px 12px 20px 20px;
+
+    background:linear-gradient(
+        #ff78aa,
+        #df477f
+    );
+
+}
+
+.cake-top{
+
+    position:absolute;
+
+    bottom:60px;
+
+    left:15px;
+
+    width:210px;
+
+    height:65px;
+
+    border-radius:12px 12px 20px 20px;
+
+    background:linear-gradient(
+        #fff,
+        #ffd2e2
+    );
+
+}
+
+.candle{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:115px;
+
+    width:10px;
+
+    height:50px;
+
+    background:#fff;
+
+    border-radius:5px;
+
+}
+
+.flame{
+
+    position:absolute;
+
+    bottom:164px;
+
+    left:110px;
+
+    width:20px;
+
+    height:28px;
+
+    background:#ffd35c;
+
+    border-radius:50% 50% 50% 0;
+
+    transform:rotate(-45deg);
+
+    box-shadow:0 0 25px #ffbe35;
+
+    animation:flicker .2s infinite alternate;
+
+}
+
+.flame.off{
+
+    display:none;
+
+}
+
+@keyframes flicker{
+
+    from{
+        transform:rotate(-45deg) scale(1);
+    }
+
+    to{
+        transform:rotate(-45deg) scale(1.12);
+    }
+
+}
+
+
+/* LETTER */
+
+.letter{
+
+    max-width:720px;
+
+    margin:20px auto;
+
+    padding:25px;
+
+    text-align:left;
+
+    line-height:1.9;
+
+    color:#e9e9f1;
+
+    background:#ffffff0b;
+
+    border:1px solid #ffffff18;
+
+    border-radius:20px;
+
+}
+
+.letter p{
+
+    margin-bottom:16px;
+
+}
+
+
+/* FINAL */
+
+.final-photo{
+
+    width:220px;
+
+    height:270px;
+
+    object-fit:cover;
+
+    padding:6px;
+
+    background:white;
+
+    border-radius:7px;
+
+    box-shadow:0 20px 70px #0009;
+
+    margin:10px auto 20px;
+
+}
+
+.quote{
+
+    max-width:700px;
+
+    margin:20px auto;
+
+    font-size:25px;
+
+    line-height:1.5;
+
+    color:#f1dbe6;
+
+}
+
+
+/* MUSIC */
+
+#musicButton{
+
+    position:fixed;
+
+    top:15px;
+
+    right:15px;
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    background:#ffffff15;
+
+    border:1px solid #ffffff35;
+
+    color:white;
+
+    font-size:21px;
+
+    z-index:100;
+
+    display:none;
+
+}
+
+#musicButton.playing{
+
+    background:linear-gradient(
+        135deg,
+        #ff4f96,
+        #8d70ff
+    );
+
+}
+
+
+/* MUSIC ERROR */
+
+#musicMessage{
+
+    position:fixed;
+
+    left:50%;
+
+    bottom:20px;
+
+    transform:translateX(-50%);
+
+    z-index:100;
+
+    background:#050509ee;
+
+    border:1px solid #ffffff30;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    display:none;
+
 }
 
 
 /* DOTS */
 
-.dots{
+#dots{
 
     position:fixed;
 
-    z-index:10;
-
-    bottom:16px;
+    bottom:15px;
 
     left:50%;
 
@@ -308,7 +762,10 @@ h2{
 
     display:flex;
 
-    gap:7px;
+    gap:6px;
+
+    z-index:20;
+
 }
 
 .dot{
@@ -321,85 +778,35 @@ h2{
 
     background:#ffffff35;
 
-    transition:.3s;
 }
 
 .dot.active{
 
     width:22px;
 
-    border-radius:9px;
+    border-radius:10px;
 
-    background:#fff;
+    background:white;
+
 }
 
 
-/* MEMORY */
+/* FIREWORK */
 
-.memory-wrap{
+#fireworks{
 
-    display:flex;
+    position:fixed;
 
-    align-items:center;
-
-    justify-content:center;
-
-    gap:18px;
-
-    min-height:58vh;
-}
-
-.photo-frame{
-
-    width:min(390px,76vw);
-
-    height:min(58vh,560px);
-
-    padding:8px;
-
-    background:#fff;
-
-    border-radius:8px;
-
-    box-shadow:0 25px 70px #0009;
-
-    transform:rotate(-2deg);
-}
-
-.photo-frame img{
+    inset:0;
 
     width:100%;
 
     height:100%;
 
-    object-fit:cover;
+    pointer-events:none;
 
-    border-radius:3px;
-}
+    z-index:50;
 
-.memory-text{
-
-    max-width:340px;
-
-    text-align:left;
-}
-
-.memory-text .num{
-
-    font-size:12px;
-
-    letter-spacing:3px;
-
-    color:#ff9fc5;
-}
-
-.memory-text p{
-
-    color:#d8d8e5;
-
-    line-height:1.8;
-
-    margin:12px 0;
 }
 
 
@@ -407,548 +814,38 @@ h2{
 
 @media(max-width:700px){
 
-    .memory-wrap{
+    .memory{
 
         flex-direction:column;
 
-        gap:14px;
+        gap:15px;
+
     }
 
-    .photo-frame{
+    .photo{
 
-        height:48vh;
+        height:42vh;
+
     }
 
     .memory-text{
 
         text-align:center;
-    }
 
-    .card{
-
-        padding:20px 10px;
     }
 
     .memory-text p{
 
         font-size:14px;
-    }
-}
 
-
-/* QUOTE */
-
-.quote{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:clamp(24px,5vw,42px);
-
-    line-height:1.35;
-
-    max-width:760px;
-
-    margin:25px auto;
-}
-
-
-/* LETTER */
-
-.letter{
-
-    max-width:720px;
-
-    margin:20px auto;
-
-    text-align:left;
-
-    background:#ffffff0a;
-
-    border:1px solid #ffffff16;
-
-    border-radius:22px;
-
-    padding:24px;
-
-    line-height:1.85;
-
-    color:#e9e8f1;
-
-    box-shadow:0 20px 60px #0005;
-}
-
-.letter strong{
-
-    color:#fff;
-}
-
-
-/* GIFT */
-
-.gift-area{
-
-    height:300px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    position:relative;
-}
-
-.gift{
-
-    width:170px;
-
-    height:125px;
-
-    position:relative;
-
-    cursor:pointer;
-
-    filter:drop-shadow(
-        0 20px 30px #0008
-    );
-
-    transition:.5s;
-}
-
-.gift .box{
-
-    position:absolute;
-
-    bottom:0;
-
-    left:8px;
-
-    width:154px;
-
-    height:100px;
-
-    border-radius:8px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #e93678,
-            #ff669b,
-            #e93678
-        );
-}
-
-.gift .lid{
-
-    position:absolute;
-
-    top:20px;
-
-    left:0;
-
-    width:170px;
-
-    height:42px;
-
-    border-radius:8px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #c92866,
-            #ff75a5,
-            #c92866
-        );
-
-    z-index:3;
-
-    transition:.7s;
-}
-
-.gift .ribbon-v{
-
-    position:absolute;
-
-    left:69px;
-
-    bottom:0;
-
-    width:30px;
-
-    height:125px;
-
-    background:#ffd76a;
-
-    z-index:4;
-}
-
-.gift .ribbon-h{
-
-    position:absolute;
-
-    left:8px;
-
-    top:56px;
-
-    width:154px;
-
-    height:24px;
-
-    background:#ffd76a;
-
-    z-index:4;
-}
-
-.gift.open .lid{
-
-    transform:
-        translateY(-95px)
-        rotate(-10deg);
-
-    opacity:0;
-}
-
-.gift.open{
-
-    transform:
-        translateY(10px)
-        scale(.9);
-}
-
-
-/* SURPRISE PHOTO */
-
-.surprise-photo{
-
-    display:none;
-
-    width:min(260px,65vw);
-
-    height:310px;
-
-    object-fit:cover;
-
-    border:7px solid white;
-
-    border-radius:8px;
-
-    box-shadow:0 20px 70px #0009;
-}
-
-.surprise-photo.show{
-
-    display:block;
-
-    animation:pop .8s both;
-}
-
-@keyframes pop{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            scale(.5)
-            rotate(-8deg);
     }
 
-    to{
+    .quote{
 
-        opacity:1;
+        font-size:21px;
 
-        transform:
-            scale(1)
-            rotate(2deg);
     }
-}
 
-
-/* CAKE */
-
-.cake-area{
-
-    position:relative;
-
-    width:300px;
-
-    height:270px;
-
-    margin:0 auto;
-}
-
-.cake{
-
-    position:absolute;
-
-    bottom:30px;
-
-    left:35px;
-
-    width:230px;
-
-    height:130px;
-}
-
-.layer{
-
-    position:absolute;
-
-    left:0;
-
-    width:100%;
-
-    border-radius:
-        12px 12px 18px 18px;
-
-    box-shadow:
-        inset 0 -10px 0 #0001;
-}
-
-.l1{
-
-    bottom:0;
-
-    height:70px;
-
-    background:
-        linear-gradient(
-            #ff8ab6,
-            #e9548b
-        );
-}
-
-.l2{
-
-    bottom:55px;
-
-    height:58px;
-
-    width:205px;
-
-    left:12px;
-
-    background:
-        linear-gradient(
-            #fff0f7,
-            #ffc5dc
-        );
-}
-
-.cream{
-
-    position:absolute;
-
-    bottom:102px;
-
-    left:22px;
-
-    width:188px;
-
-    height:20px;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    box-shadow:
-        0 4px 0 #f5b6cf;
-}
-
-.candle{
-
-    position:absolute;
-
-    bottom:122px;
-
-    width:10px;
-
-    height:48px;
-
-    background:
-        linear-gradient(
-            90deg,
-            #fff,
-            #ffc7df,
-            #fff
-        );
-
-    border-radius:5px;
-
-    left:110px;
-}
-
-.flame{
-
-    position:absolute;
-
-    left:106px;
-
-    bottom:165px;
-
-    width:18px;
-
-    height:28px;
-
-    background:#ffd76a;
-
-    border-radius:
-        50% 50% 50% 0;
-
-    transform:rotate(-45deg);
-
-    box-shadow:
-        0 0 22px #ffbf3c;
-
-    animation:
-        flicker .2s infinite alternate;
-}
-
-@keyframes flicker{
-
-    to{
-
-        transform:
-            rotate(-45deg)
-            scale(1.12);
-    }
-}
-
-.flame.off{
-
-    display:none;
-}
-
-
-/* FIREWORK CANVAS */
-
-canvas{
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:8;
-
-    pointer-events:none;
-}
-
-
-/* MUSIC BUTTON */
-
-#musicBtn{
-
-    position:fixed;
-
-    top:15px;
-
-    right:15px;
-
-    z-index:20;
-
-    border:
-        1px solid #ffffff28;
-
-    background:#ffffff0d;
-
-    color:white;
-
-    border-radius:50%;
-
-    width:46px;
-
-    height:46px;
-
-    cursor:pointer;
-
-    display:none;
-
-    font-size:20px;
-
-    backdrop-filter:blur(10px);
-
-    box-shadow:
-        0 8px 25px #0006;
-}
-
-#musicBtn.playing{
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff4f96,
-            #9f7cff
-        );
-
-    box-shadow:
-        0 0 25px #ff4f9666;
-}
-
-
-/* FINAL PHOTO */
-
-.final-photo{
-
-    width:min(220px,55vw);
-
-    height:270px;
-
-    object-fit:cover;
-
-    border:7px solid #fff;
-
-    border-radius:8px;
-
-    box-shadow:
-        0 20px 80px #0009;
-
-    margin:15px auto;
-}
-
-.small{
-
-    font-size:12px;
-
-    color:#aaa;
-}
-
-
-/* MUSIC LOADING MESSAGE */
-
-.music-status{
-
-    position:fixed;
-
-    bottom:18px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    z-index:25;
-
-    background:#0009;
-
-    border:1px solid #ffffff20;
-
-    padding:8px 15px;
-
-    border-radius:20px;
-
-    font-size:11px;
-
-    color:#ddd;
-
-    opacity:0;
-
-    pointer-events:none;
-
-    transition:.3s;
-}
-
-.music-status.show{
-
-    opacity:1;
 }
 
 </style>
@@ -958,46 +855,50 @@ canvas{
 <body>
 
 
-<!-- BACKGROUND -->
-
-<div id="stars"></div>
-
-
-<!-- FIREWORKS -->
+<!-- FIREWORK CANVAS -->
 
 <canvas id="fireworks"></canvas>
 
 
-<!-- MUSIC -->
+<!-- =================================================
+     MUSIC
+================================================= -->
 
-<audio id="bgMusic" preload="auto" loop>
-
-    <source src="./music.mp3" type="audio/mpeg">
-
-    Your browser does not support audio.
-
+<audio
+    id="birthdayMusic"
+    src="./music.mp3"
+    preload="auto"
+    loop
+    playsinline>
 </audio>
 
 
 <!-- MUSIC BUTTON -->
 
-<button id="musicBtn" title="Music">
-    ♫
+<button
+    id="musicButton"
+    onclick="toggleMusic()">
+
+    🎵
+
 </button>
 
 
-<div class="music-status" id="musicStatus">
-    🎵 Music loading...
-</div>
+<div id="musicMessage"></div>
 
 
-<!-- PAGE 0 -->
 
-<section class="page active" id="p0">
+<!-- =================================================
+     PAGE 0
+================================================= -->
+
+<section
+    class="page active"
+    id="page0">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             A little surprise for you
         </div>
 
@@ -1005,21 +906,21 @@ canvas{
             Hey Sunaina ❤️
         </h1>
 
-        <p class="sub">
+        <p class="subtitle">
 
-            Some memories are too beautiful to be forgotten.
+            Some memories are too beautiful
+            to be forgotten.
 
             <br>
 
-            So I made a tiny journey just for you.
+            So I made a little journey
+            just for you.
 
         </p>
 
-        <br>
-
         <button
             class="btn primary"
-            onclick="startSite()">
+            onclick="startBirthday()">
 
             ✨ Tap to Begin
 
@@ -1031,19 +932,23 @@ canvas{
 
 
 
-<!-- PAGE 1 -->
+<!-- =================================================
+     PAGE 1
+================================================= -->
 
-<section class="page" id="p1">
+<section
+    class="page"
+    id="page1">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Memory 01
         </div>
 
-        <div class="memory-wrap">
+        <div class="memory">
 
-            <div class="photo-frame">
+            <div class="photo">
 
                 <img
                     src="./sunaina1.jpg"
@@ -1053,19 +958,22 @@ canvas{
 
             <div class="memory-text">
 
-                <div class="num">
+                <div class="memory-number">
                     01 / 06
                 </div>
 
                 <h2>
-                    A beautiful smile
+                    A beautiful memory
                 </h2>
 
                 <p>
 
-                    Some pictures don't need a caption.
-                    They simply remind you of a person
-                    who has been special in your life.
+                    Some pictures don't need
+                    many words.
+
+                    They simply remind us of
+                    people who became special
+                    in our lives.
 
                 </p>
 
@@ -1075,7 +983,7 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
             Next memory →
 
@@ -1087,19 +995,23 @@ canvas{
 
 
 
-<!-- PAGE 2 -->
+<!-- =================================================
+     PAGE 2
+================================================= -->
 
-<section class="page" id="p2">
+<section
+    class="page"
+    id="page2">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Memory 02
         </div>
 
-        <div class="memory-wrap">
+        <div class="memory">
 
-            <div class="photo-frame">
+            <div class="photo">
 
                 <img
                     src="./sunaina2.jpg"
@@ -1109,19 +1021,19 @@ canvas{
 
             <div class="memory-text">
 
-                <div class="num">
+                <div class="memory-number">
                     02 / 06
                 </div>
 
                 <h2>
-                    That little happiness
+                    Little moments
                 </h2>
 
                 <p>
 
-                    Even when life gets busy and people
-                    get far away, some memories quietly
-                    stay close to the heart.
+                    Life keeps moving,
+                    but some little moments
+                    quietly stay with us.
 
                 </p>
 
@@ -1131,7 +1043,7 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
             Keep going →
 
@@ -1143,19 +1055,23 @@ canvas{
 
 
 
-<!-- PAGE 3 -->
+<!-- =================================================
+     PAGE 3
+================================================= -->
 
-<section class="page" id="p3">
+<section
+    class="page"
+    id="page3">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Memory 03
         </div>
 
-        <div class="memory-wrap">
+        <div class="memory">
 
-            <div class="photo-frame">
+            <div class="photo">
 
                 <img
                     src="./sunaina3.jpg"
@@ -1165,19 +1081,21 @@ canvas{
 
             <div class="memory-text">
 
-                <div class="num">
+                <div class="memory-number">
                     03 / 06
                 </div>
 
                 <h2>
-                    Different places, same memories
+                    No matter the distance
                 </h2>
 
                 <p>
 
-                    Distance can change how often we talk,
-                    but it doesn't have to change the value
-                    of a friendship.
+                    Distance can change how often
+                    people talk.
+
+                    It doesn't have to change
+                    what a friendship means.
 
                 </p>
 
@@ -1187,7 +1105,7 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
             Next →
 
@@ -1199,19 +1117,23 @@ canvas{
 
 
 
-<!-- PAGE 4 -->
+<!-- =================================================
+     PAGE 4
+================================================= -->
 
-<section class="page" id="p4">
+<section
+    class="page"
+    id="page4">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Memory 04
         </div>
 
-        <div class="memory-wrap">
+        <div class="memory">
 
-            <div class="photo-frame">
+            <div class="photo">
 
                 <img
                     src="./sunaina4.jpg"
@@ -1221,19 +1143,18 @@ canvas{
 
             <div class="memory-text">
 
-                <div class="num">
+                <div class="memory-number">
                     04 / 06
                 </div>
 
                 <h2>
-                    Still unforgettable
+                    Still remembered
                 </h2>
 
                 <p>
 
-                    Years may pass, conversations may become
-                    fewer, but some people remain unforgettable
-                    for reasons only the heart understands.
+                    Some people become memories
+                    that time cannot erase.
 
                 </p>
 
@@ -1243,9 +1164,9 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
-            One more →
+            Next →
 
         </button>
 
@@ -1255,19 +1176,23 @@ canvas{
 
 
 
-<!-- PAGE 5 -->
+<!-- =================================================
+     PAGE 5
+================================================= -->
 
-<section class="page" id="p5">
+<section
+    class="page"
+    id="page5">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Memory 05
         </div>
 
-        <div class="memory-wrap">
+        <div class="memory">
 
-            <div class="photo-frame">
+            <div class="photo">
 
                 <img
                     src="./sunaina5.jpg"
@@ -1277,7 +1202,7 @@ canvas{
 
             <div class="memory-text">
 
-                <div class="num">
+                <div class="memory-number">
                     05 / 06
                 </div>
 
@@ -1287,9 +1212,11 @@ canvas{
 
                 <p>
 
-                    Not every friendship needs to be perfect.
-                    Sometimes, simply having shared something
-                    real is enough.
+                    Not every friendship needs
+                    everyday conversations.
+
+                    Some simply remain special
+                    in the heart.
 
                 </p>
 
@@ -1299,7 +1226,7 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
             Almost there →
 
@@ -1311,19 +1238,23 @@ canvas{
 
 
 
-<!-- PAGE 6 -->
+<!-- =================================================
+     PAGE 6
+================================================= -->
 
-<section class="page" id="p6">
+<section
+    class="page"
+    id="page6">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Memory 06
         </div>
 
-        <div class="memory-wrap">
+        <div class="memory">
 
-            <div class="photo-frame">
+            <div class="photo">
 
                 <img
                     src="./sunaina6.jpg"
@@ -1333,7 +1264,7 @@ canvas{
 
             <div class="memory-text">
 
-                <div class="num">
+                <div class="memory-number">
                     06 / 06
                 </div>
 
@@ -1343,9 +1274,10 @@ canvas{
 
                 <p>
 
-                    Some people become part of our story
-                    without even realizing how much their
-                    presence meant.
+                    Some people become part
+                    of our story without even
+                    realizing how important
+                    their presence was.
 
                 </p>
 
@@ -1355,7 +1287,7 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
             There's a surprise 🎁
 
@@ -1367,23 +1299,27 @@ canvas{
 
 
 
-<!-- PAGE 7 : GIFT -->
+<!-- =================================================
+     PAGE 7 GIFT
+================================================= -->
 
-<section class="page" id="p7">
+<section
+    class="page"
+    id="page7">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             A little surprise
         </div>
 
         <h2>
-            For you, Sunaina 🎁
+            For you 🎁
         </h2>
 
-        <p class="sub">
+        <p class="subtitle">
 
-            There is one more memory waiting inside.
+            Something special is waiting inside.
 
         </p>
 
@@ -1395,20 +1331,20 @@ canvas{
                 id="gift"
                 onclick="openGift()">
 
-                <div class="box"></div>
+                <div class="gift-box"></div>
 
                 <div class="ribbon-v"></div>
 
                 <div class="ribbon-h"></div>
 
-                <div class="lid"></div>
+                <div class="gift-lid"></div>
 
             </div>
 
 
             <img
-                class="surprise-photo"
-                id="surprisePhoto"
+                class="surprise"
+                id="surprise"
                 src="./sunaina6.jpg"
                 alt="Surprise">
 
@@ -1417,7 +1353,7 @@ canvas{
 
         <button
             class="btn primary"
-            id="giftBtn"
+            id="openGiftButton"
             onclick="openGift()">
 
             Open the gift ✨
@@ -1427,9 +1363,9 @@ canvas{
 
         <button
             class="btn"
-            id="giftNext"
+            id="giftNextButton"
             style="display:none"
-            onclick="next()">
+            onclick="nextPage()">
 
             Continue →
 
@@ -1441,13 +1377,17 @@ canvas{
 
 
 
-<!-- PAGE 8 : CAKE -->
+<!-- =================================================
+     PAGE 8 CAKE
+================================================= -->
 
-<section class="page" id="p8">
+<section
+    class="page"
+    id="page8">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Your special day
         </div>
 
@@ -1460,13 +1400,13 @@ canvas{
 
             <div class="cake">
 
-                <div class="layer l1"></div>
+                <div class="cake-bottom"></div>
 
-                <div class="layer l2"></div>
+                <div class="cake-top"></div>
 
-                <div class="cream"></div>
-
-                <div class="candle"></div>
+                <div
+                    class="candle">
+                </div>
 
                 <div
                     class="flame"
@@ -1479,11 +1419,12 @@ canvas{
 
 
         <p
-            class="sub"
+            class="subtitle"
             id="wishText">
 
-            Close your eyes, make a wish,
-            and tap the button.
+            Close your eyes,
+            make a wish,
+            and blow out the candle.
 
         </p>
 
@@ -1502,13 +1443,17 @@ canvas{
 
 
 
-<!-- PAGE 9 : LETTER -->
+<!-- =================================================
+     PAGE 9 LETTER
+================================================= -->
 
-<section class="page" id="p9">
+<section
+    class="page"
+    id="page9">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             A few words from me
         </div>
 
@@ -1520,59 +1465,60 @@ canvas{
         <div class="letter">
 
             <p>
-                Happy Birthday, Sunaina! ❤️
+                <b>Happy Birthday, Sunaina! ❤️</b>
             </p>
-
-            <br>
-
 
             <p>
 
-                Even though there is so much distance
-                between us, and life has taken us on
-                different paths, I want you to know that
-                our friendship will always have a special
-                place in my heart.
+                Even though there is so much
+                distance between us, and life
+                has taken us on different paths,
+                I want you to know that our
+                friendship will always have a
+                special place in my heart.
 
             </p>
 
-
             <p>
 
-                Maybe someday you'll forget me, and maybe
-                I'll become just a small memory in your
-                life… but I don't think I could ever
+                Maybe someday you'll forget me,
+                and maybe I'll become just a
+                small memory in your life...
+
+                but I don't think I could ever
                 forget you.
 
             </p>
 
-
             <p>
 
-                Some friendships don't need daily
-                conversations or being close all the time.
-                They simply stay in your heart, no matter
-                how far apart you are.
+                Some friendships don't need
+                daily conversations or being
+                close all the time.
+
+                They simply stay in your heart,
+                no matter how far apart you are.
 
             </p>
-
 
             <p>
 
                 You may forget me someday,
                 but I'll never forget you.
 
-                No matter how much distance comes between
-                us, I'll always remember the bond we shared
-                and the beautiful memories we made.
+                No matter how much distance
+                comes between us, I'll always
+                remember the bond we shared
+                and the beautiful memories
+                we made.
 
             </p>
 
-
             <p>
 
-                Stay happy, keep smiling, and always be
-                the amazing person you are.
+                Stay happy, keep smiling,
+                and always be the amazing
+                person you are.
 
             </p>
 
@@ -1581,7 +1527,7 @@ canvas{
 
         <button
             class="btn primary"
-            onclick="next()">
+            onclick="nextPage()">
 
             One last thing… ✨
 
@@ -1593,13 +1539,17 @@ canvas{
 
 
 
-<!-- PAGE 10 : FINAL -->
+<!-- =================================================
+     PAGE 10 FINAL
+================================================= -->
 
-<section class="page" id="p10">
+<section
+    class="page"
+    id="page10">
 
     <div class="card">
 
-        <div class="kicker">
+        <div class="small-title">
             Today is all about you
         </div>
 
@@ -1610,11 +1560,12 @@ canvas{
             alt="Birthday">
 
 
-        <h1
-            style="font-size:clamp(38px,9vw,76px)">
+        <h1>
 
             HAPPY BIRTHDAY
+
             <br>
+
             SUNAINA ❤️
 
         </h1>
@@ -1623,15 +1574,16 @@ canvas{
         <p class="quote">
 
             “Some people are far away,
-            but never truly far from the heart.”
+            but never truly far from
+            the heart.”
 
         </p>
 
 
-        <p class="small">
+        <p class="subtitle">
 
             Made with friendship,
-            memories & a little bit of magic ✨
+            memories & a little magic ✨
 
         </p>
 
@@ -1643,99 +1595,108 @@ canvas{
 
 <!-- DOTS -->
 
-<div
-    class="dots"
-    id="dots">
-</div>
+<div id="dots"></div>
 
 
 
 <script>
 
-/* =========================
-   PAGE SYSTEM
-========================= */
 
-const pages =
-    [...document.querySelectorAll(".page")];
+/* =================================================
+   VARIABLES
+================================================= */
 
-let current = 0;
+let currentPage = 0;
 
-let started = false;
-
-
-/* =========================
-   MUSIC
-========================= */
+const totalPages = 11;
 
 const music =
-    document.getElementById("bgMusic");
+document.getElementById("birthdayMusic");
 
-const musicBtn =
-    document.getElementById("musicBtn");
+const musicButton =
+document.getElementById("musicButton");
 
-const musicStatus =
-    document.getElementById("musicStatus");
+const musicMessage =
+document.getElementById("musicMessage");
 
 
-music.volume = 0.45;
+/* =================================================
+   MUSIC SETTINGS
+================================================= */
+
+music.volume = 0.65;
 
 music.loop = true;
 
 
-/* =========================
-   PAGE DOTS
-========================= */
+/* =================================================
+   CREATE DOTS
+================================================= */
 
 const dots =
-    document.getElementById("dots");
+document.getElementById("dots");
 
 
-pages.forEach((_, i) => {
+for(let i=0;i<totalPages;i++){
 
-    const d =
-        document.createElement("span");
+    const dot =
+    document.createElement("span");
 
-    d.className =
-        "dot" + (i === 0 ? " active" : "");
+    dot.className =
+    "dot";
 
-    dots.appendChild(d);
+    if(i===0){
 
-});
+        dot.classList.add("active");
+
+    }
+
+    dots.appendChild(dot);
+
+}
 
 
-/* =========================
+/* =================================================
    SHOW PAGE
-========================= */
+================================================= */
 
-function show(i){
+function showPage(number){
 
-    current =
-        Math.max(
-            0,
-            Math.min(
-                i,
-                pages.length - 1
-            )
-        );
+    if(number < 0){
+        number = 0;
+    }
 
-
-    pages.forEach((page, n) => {
-
-        page.classList.toggle(
-            "active",
-            n === current
-        );
-
-    });
+    if(number >= totalPages){
+        number = totalPages - 1;
+    }
 
 
-    [...dots.children].forEach(
-        (dot, n) => {
+    currentPage = number;
+
+
+    document
+    .querySelectorAll(".page")
+    .forEach(
+        page =>
+        page.classList.remove("active")
+    );
+
+
+    document
+    .getElementById(
+        "page" + currentPage
+    )
+    .classList.add("active");
+
+
+    document
+    .querySelectorAll(".dot")
+    .forEach(
+        (dot,index) => {
 
             dot.classList.toggle(
                 "active",
-                n === current
+                index === currentPage
             );
 
         }
@@ -1744,203 +1705,228 @@ function show(i){
 }
 
 
-/* =========================
-   NEXT
-========================= */
+/* =================================================
+   NEXT PAGE
+================================================= */
 
-function next(){
+function nextPage(){
 
-    show(current + 1);
+    showPage(
+        currentPage + 1
+    );
 
 }
 
 
-/* =========================
-   START WEBSITE + MUSIC
-========================= */
+/* =================================================
+   START BIRTHDAY
+================================================= */
 
-async function startSite(){
-
-    started = true;
-
-
-    /* First show next page */
-
-    show(1);
-
-
-    /* Show music button */
-
-    musicBtn.style.display = "block";
-
+function startBirthday(){
 
     /*
-       Important:
-       Music starts only after
-       user taps this button.
+       VERY IMPORTANT:
+
+       This function is called directly
+       by the user's tap on the button.
+
+       Therefore browser autoplay policy
+       allows us to request music here.
     */
 
-    try{
 
-        music.currentTime = 0;
-
-        await music.play();
+    showPage(1);
 
 
-        musicBtn.textContent = "♫";
-
-        musicBtn.classList.add(
-            "playing"
-        );
+    musicButton.style.display =
+    "block";
 
 
-        showMusicMessage(
-            "🎵 Music is playing"
-        );
-
-    }
-
-    catch(error){
-
-        console.log(
-            "Music could not start:",
-            error
-        );
+    music.load();
 
 
-        showMusicMessage(
-            "🎵 Tap the music button to play"
-        );
+    const playPromise =
+    music.play();
+
+
+    if(playPromise !== undefined){
+
+        playPromise
+
+        .then(function(){
+
+            musicButton
+            .classList.add("playing");
+
+            musicButton.textContent =
+            "🎵";
+
+            showMessage(
+                "🎵 Music is playing"
+            );
+
+        })
+
+        .catch(function(error){
+
+            console.log(
+                "Music play error:",
+                error
+            );
+
+            showMessage(
+                "Tap 🎵 to play music"
+            );
+
+        });
 
     }
 
 }
 
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+/* =================================================
+   MUSIC TOGGLE
+================================================= */
 
-musicBtn.addEventListener(
-    "click",
-    async function(){
+function toggleMusic(){
 
-        try{
+    if(music.paused){
 
-            if(music.paused){
+        music.play()
 
-                await music.play();
+        .then(function(){
 
-                musicBtn.textContent =
-                    "♫";
+            musicButton
+            .classList.add("playing");
 
-                musicBtn.classList.add(
-                    "playing"
-                );
+            musicButton.textContent =
+            "🎵";
 
-                showMusicMessage(
-                    "🎵 Music ON"
-                );
+        })
 
-            }
-
-            else{
-
-                music.pause();
-
-                musicBtn.textContent =
-                    "🔇";
-
-                musicBtn.classList.remove(
-                    "playing"
-                );
-
-                showMusicMessage(
-                    "🔇 Music OFF"
-                );
-
-            }
-
-        }
-
-        catch(error){
+        .catch(function(error){
 
             console.log(
                 "Music error:",
                 error
             );
 
-        }
+            showMessage(
+                "Music could not play"
+            );
+
+        });
 
     }
-);
 
+    else{
 
-/* =========================
-   MUSIC STATUS
-========================= */
+        music.pause();
 
-function showMusicMessage(text){
+        musicButton
+        .classList.remove("playing");
 
-    musicStatus.textContent = text;
+        musicButton.textContent =
+        "🔇";
 
-    musicStatus.classList.add(
-        "show"
-    );
-
-
-    setTimeout(() => {
-
-        musicStatus.classList.remove(
-            "show"
-        );
-
-    }, 1800);
+    }
 
 }
 
 
-/* =========================
-   MUSIC ERROR CHECK
-========================= */
-
-music.addEventListener(
-    "error",
-    function(){
-
-        console.log(
-            "music.mp3 could not be loaded"
-        );
-
-        showMusicMessage(
-            "⚠️ music.mp3 not found"
-        );
-
-    }
-);
-
+/* =================================================
+   MUSIC EVENTS
+================================================= */
 
 music.addEventListener(
     "canplay",
     function(){
 
         console.log(
-            "music.mp3 loaded successfully"
+            "SUCCESS: music.mp3 loaded"
         );
 
     }
 );
 
 
-/* =========================
+music.addEventListener(
+    "playing",
+    function(){
+
+        console.log(
+            "SUCCESS: music is playing"
+        );
+
+        musicButton
+        .classList.add("playing");
+
+        musicButton.textContent =
+        "🎵";
+
+    }
+);
+
+
+music.addEventListener(
+    "pause",
+    function(){
+
+        musicButton
+        .classList.remove("playing");
+
+    }
+);
+
+
+music.addEventListener(
+    "error",
+    function(){
+
+        console.log(
+            "ERROR: music.mp3 could not load"
+        );
+
+        showMessage(
+            "⚠️ music.mp3 could not load"
+        );
+
+    }
+);
+
+
+/* =================================================
+   SHOW MESSAGE
+================================================= */
+
+function showMessage(text){
+
+    musicMessage.innerText =
+    text;
+
+    musicMessage.style.display =
+    "block";
+
+
+    setTimeout(function(){
+
+        musicMessage.style.display =
+        "none";
+
+    },2500);
+
+}
+
+
+/* =================================================
    GIFT
-========================= */
+================================================= */
 
 function openGift(){
 
     const gift =
-        document.getElementById("gift");
-
+    document.getElementById("gift");
 
     if(
         gift.classList.contains("open")
@@ -1954,108 +1940,112 @@ function openGift(){
     gift.classList.add("open");
 
 
-    setTimeout(() => {
+    setTimeout(function(){
 
         document
-            .getElementById("surprisePhoto")
-            .classList.add("show");
-
-
-        document
-            .getElementById("giftBtn")
-            .style.display = "none";
+        .getElementById("surprise")
+        .classList.add("show");
 
 
         document
-            .getElementById("giftNext")
-            .style.display = "inline-block";
+        .getElementById("openGiftButton")
+        .style.display =
+        "none";
 
-    }, 500);
+
+        document
+        .getElementById("giftNextButton")
+        .style.display =
+        "inline-block";
+
+    },500);
 
 }
 
 
-/* =========================
-   CAKE / WISH
-========================= */
+/* =================================================
+   CAKE
+================================================= */
 
 function blowCandle(){
 
     document
-        .getElementById("flame")
-        .classList.add("off");
+    .getElementById("flame")
+    .classList.add("off");
 
 
     document
-        .getElementById("wishText")
-        .textContent =
-        "Wish made. May this year bring you more reasons to smile. ❤️";
+    .getElementById("wishText")
+    .innerText =
+    "Wish made ❤️ May this year bring you countless reasons to smile.";
 
 
-    fireworks();
+    createFireworks();
 
 
     setTimeout(
-        next,
-        2600
+        function(){
+
+            nextPage();
+
+        },
+        3000
     );
 
 }
 
 
-/* =========================
+/* =================================================
    FIREWORKS
-========================= */
+================================================= */
 
 const canvas =
-    document.getElementById(
-        "fireworks"
-    );
+document.getElementById("fireworks");
 
 const ctx =
-    canvas.getContext("2d");
+canvas.getContext("2d");
 
 
 let particles = [];
 
 
-function resize(){
+function resizeCanvas(){
 
     canvas.width =
-        window.innerWidth;
+    window.innerWidth;
 
     canvas.height =
-        window.innerHeight;
+    window.innerHeight;
 
 }
 
 
+resizeCanvas();
+
+
 window.addEventListener(
     "resize",
-    resize
+    resizeCanvas
 );
 
 
-resize();
-
-
-function burst(x, y){
+function createBurst(x,y){
 
     for(
-        let i = 0;
-        i < 70;
+        let i=0;
+        i<80;
         i++
     ){
 
         const angle =
-            Math.random() *
-            Math.PI *
-            2;
+        Math.random() *
+        Math.PI *
+        2;
 
 
         const speed =
-            2 +
-            Math.random() * 5;
+        2 +
+        Math.random()*5;
 
 
         particles.push({
@@ -2065,17 +2055,15 @@ function burst(x, y){
             y:y,
 
             vx:
-                Math.cos(angle) *
-                speed,
+            Math.cos(angle)*speed,
 
             vy:
-                Math.sin(angle) *
-                speed,
+            Math.sin(angle)*speed,
 
             life:1,
 
             hue:
-                Math.random() * 360
+            Math.random()*360
 
         });
 
@@ -2084,19 +2072,19 @@ function burst(x, y){
 }
 
 
-function fireworks(){
+function createFireworks(){
 
     for(
-        let i = 0;
-        i < 9;
+        let i=0;
+        i<10;
         i++
     ){
 
         setTimeout(
 
-            () => {
+            function(){
 
-                burst(
+                createBurst(
 
                     Math.random() *
                     canvas.width,
@@ -2109,122 +2097,170 @@ function fireworks(){
 
             },
 
-            i * 180
+            i*200
 
         );
-
-    }
-
-
-    const start =
-        performance.now();
-
-
-    function loop(time){
-
-        ctx.clearRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
-
-
-        particles.forEach(
-            particle => {
-
-                particle.x +=
-                    particle.vx;
-
-                particle.y +=
-                    particle.vy;
-
-                particle.vy +=
-                    .045;
-
-                particle.life -=
-                    .014;
-
-
-                ctx.globalAlpha =
-                    Math.max(
-                        0,
-                        particle.life
-                    );
-
-
-                ctx.fillStyle =
-                    `hsl(
-                        ${particle.hue},
-                        100%,
-                        70%
-                    )`;
-
-
-                ctx.fillRect(
-                    particle.x,
-                    particle.y,
-                    3,
-                    3
-                );
-
-            }
-        );
-
-
-        particles =
-            particles.filter(
-                particle =>
-                    particle.life > 0
-            );
-
-
-        ctx.globalAlpha = 1;
-
-
-        if(
-            particles.length ||
-            time - start < 5000
-        ){
-
-            requestAnimationFrame(
-                loop
-            );
-
-        }
 
     }
 
 
     requestAnimationFrame(
-        loop
+        animateFireworks
     );
 
 }
 
 
-/* =========================
-   KEYBOARD
-========================= */
+function animateFireworks(){
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    particles.forEach(
+        particle => {
+
+            particle.x +=
+            particle.vx;
+
+            particle.y +=
+            particle.vy;
+
+            particle.vy +=
+            .04;
+
+            particle.life -=
+            .015;
+
+
+            ctx.globalAlpha =
+            Math.max(
+                0,
+                particle.life
+            );
+
+
+            ctx.fillStyle =
+            "hsl(" +
+            particle.hue +
+            ",100%,70%)";
+
+
+            ctx.fillRect(
+                particle.x,
+                particle.y,
+                3,
+                3
+            );
+
+        }
+    );
+
+
+    particles =
+    particles.filter(
+        particle =>
+        particle.life > 0
+    );
+
+
+    ctx.globalAlpha = 1;
+
+
+    if(particles.length > 0){
+
+        requestAnimationFrame(
+            animateFireworks
+        );
+
+    }
+
+}
+
+
+/* =================================================
+   SWIPE SUPPORT
+================================================= */
+
+let touchStartX = 0;
+
 
 document.addEventListener(
-    "keydown",
-    function(e){
+    "touchstart",
+    function(event){
+
+        touchStartX =
+        event.changedTouches[0].screenX;
+
+    },
+    {passive:true}
+);
+
+
+document.addEventListener(
+    "touchend",
+    function(event){
+
+        const touchEndX =
+        event.changedTouches[0].screenX;
+
+
+        const difference =
+        touchEndX - touchStartX;
+
 
         if(
-            e.key === "ArrowRight"
+            Math.abs(difference) > 80
         ){
 
-            next();
+            if(difference < 0){
+
+                nextPage();
+
+            }
+
+            else{
+
+                showPage(
+                    currentPage - 1
+                );
+
+            }
 
         }
 
+    },
+    {passive:true}
+);
+
+
+/* =================================================
+   KEYBOARD
+================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
 
         if(
-            e.key === "ArrowLeft"
+            event.key === "ArrowRight"
         ){
 
-            show(current - 1);
+            nextPage();
+
+        }
+
+        if(
+            event.key === "ArrowLeft"
+        ){
+
+            showPage(
+                currentPage - 1
+            );
 
         }
 
