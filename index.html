@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Happy Birthday, Sunaina ❤️</title>
+<meta name="theme-color" content="#080812">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#070711;color:#fff;font-family:"DM Sans",sans-serif}
+body{touch-action:manipulation}
+#stars{position:fixed;inset:0;z-index:0;background:
+ radial-gradient(circle at 20% 20%,rgba(255,92,160,.12),transparent 32%),
+ radial-gradient(circle at 80% 75%,rgba(120,100,255,.13),transparent 35%),
+ linear-gradient(145deg,#080812,#101020 55%,#070711)}
+#stars:before,#stars:after{content:"";position:absolute;inset:0;background-image:
+ radial-gradient(2px 2px at 10% 20%,#fff8,transparent),
+ radial-gradient(1px 1px at 30% 70%,#fff9,transparent),
+ radial-gradient(2px 2px at 60% 18%,#fff7,transparent),
+ radial-gradient(1px 1px at 80% 38%,#fff9,transparent),
+ radial-gradient(2px 2px at 92% 80%,#fff8,transparent),
+ radial-gradient(1px 1px at 45% 45%,#fff8,transparent);
+ background-size:260px 220px;animation:twinkle 6s linear infinite}
+#stars:after{opacity:.45;transform:scale(1.4);animation-delay:-3s}
+@keyframes twinkle{50%{opacity:.35;transform:translateY(-5px)}}
+.page{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;padding:22px;opacity:0;visibility:hidden;transform:scale(1.03);transition:opacity .65s ease,transform .65s ease,visibility .65s}
+.page.active{opacity:1;visibility:visible;transform:scale(1)}
+.card{width:min(900px,100%);max-height:94vh;overflow:auto;text-align:center;padding:26px 18px}
+.kicker{letter-spacing:4px;text-transform:uppercase;font-size:11px;color:#ff9fc5;margin-bottom:12px}
+h1,h2{font-family:"Playfair Display",serif}
+h1{font-size:clamp(42px,11vw,88px);line-height:.95;margin-bottom:18px;background:linear-gradient(120deg,#fff,#ffc6db 48%,#d7c9ff);-webkit-background-clip:text;color:transparent}
+h2{font-size:clamp(34px,7vw,62px);margin-bottom:12px}
+.sub{max-width:650px;margin:0 auto;color:#d9d9e5;line-height:1.7;font-size:15px}
+.btn{border:1px solid #ffffff35;background:#ffffff0d;color:#fff;padding:13px 21px;border-radius:999px;font-weight:600;cursor:pointer;backdrop-filter:blur(10px);transition:.25s;margin:8px}
+.btn:hover{background:#ffffff18;transform:translateY(-2px)}
+.primary{background:linear-gradient(135deg,#ff4f96,#9f7cff);border:0;box-shadow:0 10px 35px #ff4f9630}
+.dots{position:fixed;z-index:10;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:7px}
+.dot{width:7px;height:7px;border-radius:50%;background:#ffffff35;transition:.3s}.dot.active{width:22px;border-radius:9px;background:#fff}
+.memory-wrap{display:flex;align-items:center;justify-content:center;gap:18px;min-height:58vh}
+.photo-frame{width:min(390px,76vw);height:min(58vh,560px);padding:8px;background:#fff;border-radius:8px;box-shadow:0 25px 70px #0009;transform:rotate(-2deg)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.memory-text{max-width:340px;text-align:left}
+.memory-text .num{font-size:12px;letter-spacing:3px;color:#ff9fc5}
+.memory-text p{color:#d8d8e5;line-height:1.8;margin:12px 0}
+@media(max-width:700px){.memory-wrap{flex-direction:column;gap:14px}.photo-frame{height:48vh}.memory-text{text-align:center}.card{padding:20px 10px}.memory-text p{font-size:14px}}
+.quote{font-family:"Playfair Display",serif;font-size:clamp(24px,5vw,42px);line-height:1.35;max-width:760px;margin:25px auto}
+.letter{max-width:720px;margin:20px auto;text-align:left;background:#ffffff0a;border:1px solid #ffffff16;border-radius:22px;padding:24px;line-height:1.85;color:#e9e8f1;box-shadow:0 20px 60px #0005}
+.letter strong{color:#fff}
+.gift-area{height:300px;display:flex;align-items:center;justify-content:center;position:relative}
+.gift{width:170px;height:125px;position:relative;cursor:pointer;filter:drop-shadow(0 20px 30px #0008);transition:.5s}
+.gift .box{position:absolute;bottom:0;left:8px;width:154px;height:100px;border-radius:8px;background:linear-gradient(90deg,#e93678,#ff669b,#e93678)}
+.gift .lid{position:absolute;top:20px;left:0;width:170px;height:42px;border-radius:8px;background:linear-gradient(90deg,#c92866,#ff75a5,#c92866);z-index:3;transition:.7s}
+.gift .ribbon-v{position:absolute;left:69px;bottom:0;width:30px;height:125px;background:#ffd76a;z-index:4}
+.gift .ribbon-h{position:absolute;left:8px;top:56px;width:154px;height:24px;background:#ffd76a;z-index:4}
+.gift.open .lid{transform:translateY(-95px) rotate(-10deg);opacity:0}
+.gift.open{transform:translateY(10px) scale(.9)}
+.surprise-photo{display:none;width:min(260px,65vw);height:310px;object-fit:cover;border:7px solid white;border-radius:8px;box-shadow:0 20px 70px #0009}
+.surprise-photo.show{display:block;animation:pop .8s both}
+@keyframes pop{from{opacity:0;transform:scale(.5) rotate(-8deg)}to{opacity:1;transform:scale(1) rotate(2deg)}}
+.cake-area{position:relative;width:300px;height:270px;margin:0 auto}
+.cake{position:absolute;bottom:30px;left:35px;width:230px;height:130px}
+.layer{position:absolute;left:0;width:100%;border-radius:12px 12px 18px 18px;box-shadow:inset 0 -10px 0 #0001}
+.l1{bottom:0;height:70px;background:linear-gradient(#ff8ab6,#e9548b)}
+.l2{bottom:55px;height:58px;width:205px;left:12px;background:linear-gradient(#fff0f7,#ffc5dc)}
+.cream{position:absolute;bottom:102px;left:22px;width:188px;height:20px;border-radius:50%;background:#fff;box-shadow:0 4px 0 #f5b6cf}
+.candle{position:absolute;bottom:122px;width:10px;height:48px;background:linear-gradient(90deg,#fff,#ffc7df,#fff);border-radius:5px;left:110px}
+.flame{position:absolute;left:106px;bottom:165px;width:18px;height:28px;background:#ffd76a;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 0 22px #ffbf3c;animation:flicker .2s infinite alternate}
+@keyframes flicker{to{transform:rotate(-45deg) scale(1.12)}}
+.flame.off{display:none}
+canvas{position:fixed;inset:0;z-index:8;pointer-events:none}
+#musicBtn{position:fixed;top:15px;right:15px;z-index:20;border:1px solid #ffffff28;background:#ffffff0d;color:white;border-radius:50%;width:42px;height:42px;cursor:pointer;display:none}
+.final-photo{width:min(220px,55vw);height:270px;object-fit:cover;border:7px solid #fff;border-radius:8px;box-shadow:0 20px 80px #0009;margin:15px auto}
+.small{font-size:12px;color:#aaa}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<canvas id="fireworks"></canvas>
+<button id="musicBtn" title="Music">♫</button>
+
+<section class="page active" id="p0">
+ <div class="card">
+  <div class="kicker">A little surprise for you</div>
+  <h1>Hey Sunaina ❤️</h1>
+  <p class="sub">Some memories are too beautiful to be forgotten.<br>So I made a tiny journey just for you.</p>
+  <br><button class="btn primary" onclick="startSite()">✨ Tap to Begin</button>
+ </div>
+</section>
+
+<section class="page" id="p1">
+ <div class="card">
+  <div class="kicker">Memory 01</div>
+  <div class="memory-wrap">
+   <div class="photo-frame"><img src="sunaina1.jpg" alt="Memory 1"></div>
+   <div class="memory-text"><div class="num">01 / 06</div><h2>A beautiful smile</h2><p>Some pictures don't need a caption. They simply remind you of a person who has been special in your life.</p></div>
+  </div>
+  <button class="btn primary" onclick="next()">Next memory →</button>
+ </div>
+</section>
+
+<section class="page" id="p2">
+ <div class="card">
+  <div class="kicker">Memory 02</div>
+  <div class="memory-wrap">
+   <div class="photo-frame"><img src="sunaina2.jpg" alt="Memory 2"></div>
+   <div class="memory-text"><div class="num">02 / 06</div><h2>That little happiness</h2><p>Even when life gets busy and people get far away, some memories quietly stay close to the heart.</p></div>
+  </div>
+  <button class="btn primary" onclick="next()">Keep going →</button>
+ </div>
+</section>
+
+<section class="page" id="p3">
+ <div class="card">
+  <div class="kicker">Memory 03</div>
+  <div class="memory-wrap">
+   <div class="photo-frame"><img src="sunaina3.jpg" alt="Memory 3"></div>
+   <div class="memory-text"><div class="num">03 / 06</div><h2>Different places, same memories</h2><p>Distance can change how often we talk, but it doesn't have to change the value of a friendship.</p></div>
+  </div>
+  <button class="btn primary" onclick="next()">Next →</button>
+ </div>
+</section>
+
+<section class="page" id="p4">
+ <div class="card">
+  <div class="kicker">Memory 04</div>
+  <div class="memory-wrap">
+   <div class="photo-frame"><img src="sunaina4.jpg" alt="Memory 4"></div>
+   <div class="memory-text"><div class="num">04 / 06</div><h2>Still unforgettable</h2><p>Years may pass, conversations may become fewer, but some people remain unforgettable for reasons only the heart understands.</p></div>
+  </div>
+  <button class="btn primary" onclick="next()">One more →</button>
+ </div>
+</section>
+
+<section class="page" id="p5">
+ <div class="card">
+  <div class="kicker">Memory 05</div>
+  <div class="memory-wrap">
+   <div class="photo-frame"><img src="sunaina5.jpg" alt="Memory 5"></div>
+   <div class="memory-text"><div class="num">05 / 06</div><h2>A friendship worth remembering</h2><p>Not every friendship needs to be perfect. Sometimes, simply having shared something real is enough.</p></div>
+  </div>
+  <button class="btn primary" onclick="next()">Almost there →</button>
+ </div>
+</section>
+
+<section class="page" id="p6">
+ <div class="card">
+  <div class="kicker">Memory 06</div>
+  <div class="memory-wrap">
+   <div class="photo-frame"><img src="sunaina6.jpg" alt="Memory 6"></div>
+   <div class="memory-text"><div class="num">06 / 06</div><h2>And this is why...</h2><p>Some people become part of our story without even realizing how much their presence meant.</p></div>
+  </div>
+  <button class="btn primary" onclick="next()">There's a surprise 🎁</button>
+ </div>
+</section>
+
+<section class="page" id="p7">
+ <div class="card">
+  <div class="kicker">A little surprise</div>
+  <h2>For you, Sunaina 🎁</h2>
+  <p class="sub">There is one more memory waiting inside.</p>
+  <div class="gift-area">
+   <div class="gift" id="gift" onclick="openGift()">
+    <div class="box"></div><div class="ribbon-v"></div><div class="ribbon-h"></div><div class="lid"></div>
+   </div>
+   <img class="surprise-photo" id="surprisePhoto" src="sunaina6.jpg">
+  </div>
+  <button class="btn primary" id="giftBtn" onclick="openGift()">Open the gift ✨</button>
+  <button class="btn" id="giftNext" style="display:none" onclick="next()">Continue →</button>
+ </div>
+</section>
+
+<section class="page" id="p8">
+ <div class="card">
+  <div class="kicker">Your special day</div>
+  <h2>Make a Wish 🎂</h2>
+  <div class="cake-area">
+   <div class="cake"><div class="layer l1"></div><div class="layer l2"></div><div class="cream"></div><div class="candle"></div><div class="flame" id="flame"></div></div>
+  </div>
+  <p class="sub" id="wishText">Close your eyes, make a wish, and tap the button.</p>
+  <button class="btn primary" onclick="blowCandle()">🕯️ Make a Wish</button>
+ </div>
+</section>
+
+<section class="page" id="p9">
+ <div class="card">
+  <div class="kicker">A few words from me</div>
+  <h2>For Sunaina ❤️</h2>
+  <div class="letter">
+   <p>Happy Birthday, Sunaina! ❤️</p><br>
+   <p>Even though there is so much distance between us, and life has taken us on different paths, I want you to know that our friendship will always have a special place in my heart.</p>
+   <p>Maybe someday you’ll forget me, and maybe I’ll become just a small memory in your life… but I don’t think I could ever forget you.</p>
+   <p>Some friendships don’t need daily conversations or being close all the time. They simply stay in your heart, no matter how far apart you are.</p>
+   <p>You may forget me someday, but I’ll never forget you. No matter how much distance comes between us, I’ll always remember the bond we shared and the beautiful memories we made.</p>
+   <p>Stay happy, keep smiling, and always be the amazing person you are.</p>
+  </div>
+  <button class="btn primary" onclick="next()">One last thing… ✨</button>
+ </div>
+</section>
+
+<section class="page" id="p10">
+ <div class="card">
+  <div class="kicker">Today is all about you</div>
+  <img class="final-photo" src="sunaina6.jpg">
+  <h1 style="font-size:clamp(38px,9vw,76px)">HAPPY BIRTHDAY<br>SUNAINA ❤️</h1>
+  <p class="quote">“Some people are far away, but never truly far from the heart.”</p>
+  <p class="small">Made with friendship, memories & a little bit of magic ✨</p>
+ </div>
+</section>
+
+<div class="dots" id="dots"></div>
+
+<script>
+const pages=[...document.querySelectorAll('.page')];
+let current=0, started=false, music=null;
+const dots=document.getElementById('dots');
+pages.forEach((_,i)=>{const d=document.createElement('span');d.className='dot'+(i===0?' active':'');dots.appendChild(d)});
+function show(i){
+ current=Math.max(0,Math.min(i,pages.length-1));
+ pages.forEach((p,n)=>p.classList.toggle('active',n===current));
+ [...dots.children].forEach((d,n)=>d.classList.toggle('active',n===current));
+}
+function next(){show(current+1)}
+function startSite(){
+ started=true; show(1);
+ document.getElementById('musicBtn').style.display='block';
+ // Music: put your MP3 beside index.html and name it birthday-music.mp3. It starts after Tap to Begin.
+ music=new Audio('./birthday-music.mp3'); music.loop=true; music.volume=.45; music.preload='auto';
+ music.play().catch(()=>{});
+}
+document.getElementById('musicBtn').onclick=()=>{
+ if(!music)return;
+ if(music.paused){music.play();document.getElementById('musicBtn').textContent='♫'}
+ else{music.pause();document.getElementById('musicBtn').textContent='🔇'}
+};
+function openGift(){
+ const gift=document.getElementById('gift');
+ if(gift.classList.contains('open')) return;
+ gift.classList.add('open');
+ setTimeout(()=>{
+  document.getElementById('surprisePhoto').classList.add('show');
+  document.getElementById('giftBtn').style.display='none';
+  document.getElementById('giftNext').style.display='inline-block';
+ },500);
+}
+function blowCandle(){
+ document.getElementById('flame').classList.add('off');
+ document.getElementById('wishText').textContent='Wish made. May this year bring you more reasons to smile. ❤️';
+ fireworks();
+ setTimeout(next,2600);
+}
+const canvas=document.getElementById('fireworks'),ctx=canvas.getContext('2d');
+let particles=[];
+function resize(){canvas.width=innerWidth;canvas.height=innerHeight}
+addEventListener('resize',resize);resize();
+function burst(x,y){
+ for(let i=0;i<70;i++){
+  const a=Math.random()*Math.PI*2, s=2+Math.random()*5;
+  particles.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,life:1,h:Math.random()*360});
+ }
+}
+function fireworks(){
+ for(let i=0;i<9;i++)setTimeout(()=>burst(Math.random()*canvas.width,Math.random()*canvas.height*.65),i*180);
+ let start=performance.now();
+ function loop(t){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.045;p.life-=.014;ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=`hsl(${p.h},100%,70%)`;ctx.fillRect(p.x,p.y,3,3)});
+  particles=particles.filter(p=>p.life>0);
+  ctx.globalAlpha=1;
+  if(particles.length||t-start<5000)requestAnimationFrame(loop);
+ }
+ requestAnimationFrame(loop);
+}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')show(current-1)});
+</script>
+</body>
+</html>
